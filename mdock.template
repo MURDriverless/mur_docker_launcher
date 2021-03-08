@@ -1,0 +1,20 @@
+#!/bin/bash
+# Auto generated file do not modify
+# For changes re-run mur_docker_launcher's ./config.py
+
+docker run \
+    ${GPU_FLAG} \
+    ${X11_FLAG} \
+    ${AUTOMOUNT_FLAG} \
+    ${VSCODEINT_FLAG} \
+    ${PORTFORWARD_FLAG} \
+    ${USBBUS_FLAG} \
+    --name=${CONTAINER_NAME} \
+    -itd \
+    --rm \
+    ${EXTRA_FLAGS} \
+    ${IMAGE_NAME}
+
+containerId=$$(docker ps -l -q)
+xhost +local:`docker inspect --format='{{ .Config.Hostname }}' $$containerId`
+docker attach $$containerId
