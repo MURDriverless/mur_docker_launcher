@@ -22,6 +22,6 @@ sudo make install
 ```
 
 ## TODO
-- [ ] Move install to /usr/local/sbin, with `sudo`
+- [x] Move install to /usr/local/sbin, with `sudo`
 - [ ] Actually make cli config options
 - [ ] More configurations

@@ -3,4 +3,4 @@ ifeq ($(PREFIX),)
 endif
 
 install:
-	install -m 755 mdock $(DESTDIR)$(PREFIX)/bin
+	sudo install -m 755 mdock $(DESTDIR)$(PREFIX)/sbin
